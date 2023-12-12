@@ -1,0 +1,175 @@
+@import url(./css/reset.css);
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+:root {
+    --background-color: #ededed80;
+    --primary-color: #501c00;
+    --secondary-color: #ffffff;
+}
+
+* {
+    font-family: "Raleway", sans-serif;
+}
+.dp-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: rgb(83, 83, 83);
+    color: var(--secondary-color);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(./img/bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1300px;
+    padding: 10px;
+}
+#contact {
+    display: none;
+}
+.flip-card label, form button {
+    padding: 10px 60px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    border: none;
+}
+.flip-card label:hover, form button:hover {
+    opacity: 0.9;
+}
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 600px;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    
+
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.fliped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.68);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+.flip-card-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+.flip-card-back {
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+.card_text {
+}
+h1 {
+    color: var(--primary-color);
+    font-size: 3rem;
+    line-height: 3rem;
+}
+h2 {
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+img {
+    border-radius: 100%;
+    width: 200px;
+    border: 3px solid #dc8d64;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+form input, textarea{
+    width: calc(100% - 50px);
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+}
+textarea {
+    height: 250px;
+}
+form textarea {
+    resize: none;
+}
+input:focus, textarea:focus {
+    outline-color: var(--primary-color);
+}
+input::placeholder,
+textarea::placeholder,
+input, textarea {
+    text-indent: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+lord-icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
